@@ -104,60 +104,20 @@ section{
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
-    display: flex;
+    display: block; /* Kart kutusunun içinde flex kaldırıldı */
+    width: 100%; /* Kartın genişliği ayarlandı */
+    height: 20rem; /* Yüksekliği resme göre otomatik olarak ayarlanacak */
 }
 
 .card-box img{
-    width: 100%;
-    height: 20rem; /* Sabit yükseklik */
-    object-fit:cover; /* Resimlerin taşmadan sığmasını sağlar */
-    transition: .5s ease
+    width: 100%; 
+    height: 20rem; 
+    object-fit: cover;
+    transition: transform 0.5s ease; 
 }
 
 .card-box:hover img{
     transform: scale(1.1);
-}
-
-
-.card-box .card-layer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0,0,0,.1), var(--main-color));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 4rem;
-    transform: translateY(100%);
-    transition: .5s ease;
-}
-.card-box:hover .card-layer{
-    transform:translateY(0);
-}
-
-.card-layer h4{
-    font-size: 3rem;
-}
-.card-layer p{
-    font-size: 1.6rem;
-    margin: .3rem 0 1;
-}
-.card-layer a{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background: var(--text-color);
-    border-radius: 50%;
-}
-.card-layer a i{
-    font-size: 2rem;
-    color: var(--second-bg-color);
 }
 
 /*Denemelik*/
@@ -186,45 +146,14 @@ section{
     display: none; /* Varsayılan olarak gizli */
 }
 
-.card-box:hover .card-layer h4 {
-    display: block; /* Hover sırasında ortaya çıkar */
-}
+
 /*Denemelik bitiş*/
-
-
-
-/* Butonların görünümü */
-.categories {
-    
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.filter-btn {
-    background-color: var(--main-color);
-    border: none;
-    padding: 1rem 2rem;
-    margin: 0.5rem;
-    font-size: 1.6rem;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.filter-btn:hover {
-    background-color: var(--second-bg-color);
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
 .card-box a {
     text-decoration: none;
     color: white;
+    color: inherit;        /* Yazının rengi doğal haliyle kalacak */
+    position: relative;     /* İçindeki öğelerin yerleşimi için */
+    display: block;         /* A etiketi tam alanı kaplayacak */
 }
 
 .card-box a:hover h4 {
@@ -249,15 +178,7 @@ section{
     #menu-icon {
         display: block; /* Menü simgesi mobilde gösterilecek */
     }
-    .filter-btn {
-        display: block;
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    .categories {
-        margin-bottom: 2rem;
-    }
+   
 }
 
 /* Tabletler (min-width: 768px ve max-width: 1024px) */
@@ -274,15 +195,7 @@ section{
     .navbar a {
         font-size: 1.6rem;
     }
-    .filter-btn {
-        display: inline-block;
-        width: auto;
-        margin-bottom: 1rem;
-    }
-
-    .categories {
-        margin-bottom: 3rem;
-    }
+    
 }
 
 /* Laptoplar ve masaüstü cihazlar (min-width: 1024px) */
@@ -299,10 +212,5 @@ section{
     .navbar a {
         font-size: 1.7rem;
     }
-    .categories {
-        margin-bottom: 4rem;
-    }
+   
 }
-
-
-
