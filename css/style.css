@@ -103,8 +103,7 @@ section{
     position: relative;
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--bg-color);
-    overflow: hidden;
-    
+    overflow: hidden;    
     width: 100%; /* Kartın genişliği ayarlandı */
     height: 20rem; /* Yüksekliği resme göre otomatik olarak ayarlanacak */
 }
@@ -150,8 +149,7 @@ section{
 /*Denemelik bitiş*/
 .card-box a {
     text-decoration: none;
-    color: white;
-   
+    color: white;   
     position: relative;     /* İçindeki öğelerin yerleşimi için */
     display: block;         /* A etiketi tam alanı kaplayacak */
 }

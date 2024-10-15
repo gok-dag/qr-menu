@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --second-bg-color: #5f2222;
+    --text-color: #000000;
+    --main-color: #997c45;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.header.sticky {
+    background: var(--bg-color);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* Kart stilini düzenleme */
+.card-container {
+    display: flex;
+    flex-direction: column; /* Alt alta sıralanmasını sağlamak için */
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.card-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--second-bg-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 700px; /* Kartın maksimum genişliğini sınırla */
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem; /* Kartlar arasında boşluk */
+}
+
+.image-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%; 
+    overflow: hidden;
+    margin-right: 1.5rem;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.content h4 {
+    font-size: 2rem;
+    color: white;
+}
+
+.content span {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Mobil cihazlar için düzenleme */
+@media (max-width: 768px) {
+    .card-box {
+        flex-direction: row; /* Mobilde de fotoğrafın solda kalmasını sağlıyor */
+        text-align: left;
+        padding: 2rem;
+    }
+
+    .image-container {
+        margin-right: 1.5rem;
+    }
+
+    .content {
+        justify-content: space-between;
+        flex-direction: row; /* Mobilde de içerik yatayda kalacak */
+    }
+}
