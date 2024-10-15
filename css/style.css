@@ -104,7 +104,7 @@ section{
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
-    display: block; /* Kart kutusunun içinde flex kaldırıldı */
+    
     width: 100%; /* Kartın genişliği ayarlandı */
     height: 20rem; /* Yüksekliği resme göre otomatik olarak ayarlanacak */
 }
@@ -151,7 +151,7 @@ section{
 .card-box a {
     text-decoration: none;
     color: white;
-    color: inherit;        /* Yazının rengi doğal haliyle kalacak */
+   
     position: relative;     /* İçindeki öğelerin yerleşimi için */
     display: block;         /* A etiketi tam alanı kaplayacak */
 }
