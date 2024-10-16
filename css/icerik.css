@@ -81,6 +81,14 @@ section {
     padding: 10rem 9% 2rem;
 }
 
+.card .heading{
+    margin-bottom: 4rem;
+    font-size:  3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Kart stilini düzenleme */
 .card-container {
     display: flex;
