@@ -26,6 +26,7 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    padding-top: 1rem;
 }
 
 .header {
@@ -131,15 +132,35 @@ section {
     width: 100%;
 }
 
-.content h4 {
+.content h4 {    
     font-size: 2rem;
-    color: white;
+    color: white;   
 }
-
+.content p {    
+    position:absolute;
+    display: block;
+    font-size: 1.4rem;
+    color: white;
+    margin: 5.6rem 15rem 0 0;
+}
 .content span {
     font-size: 2rem;
     color: white;
 }
+
+.chocolate-info {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color); /* Varsayılan text color */
+}
+
+.chocolate-info p {
+    border-top: 1px solid #000; /* Üstte bir çizgi */
+    padding-top: 1rem; /* Metin ile çizgi arası boşluk */
+}
+
 
 /* Mobil cihazlar için düzenleme */
 @media (max-width: 768px) {
@@ -156,5 +177,18 @@ section {
     .content {
         justify-content: space-between;
         flex-direction: row; /* Mobilde de içerik yatayda kalacak */
+    }
+}
+@media (max-width: 450px) {    
+    .content span{
+        font-size: 1.3rem;
+    }
+    .content h4{
+        font-size: 1.3rem;
+    }
+    .content p {
+        font-size: 0.9rem;
+        color: white;
+        
     }
 }
