@@ -38,7 +38,13 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    transition: .3s;
+    transition: top 0.3s ease;
+}
+.header.hide {
+    top: -100px; /* Yukarı kaydırarak gizler */
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 .header.sticky{
@@ -69,13 +75,7 @@ body{
     color: var(--main-color);
 }
 
-#menu-icon{
-    position: relative;
-    font-size: 3.6rem;
-    color: var(--text-color);
-    cursor: pointer;
-    display: none;
-}
+
 
 section{
     min-height: 100vh;
@@ -171,12 +171,7 @@ section{
 
     .navbar a {
         font-size: 1.4rem;
-    }
-
-    #menu-icon {
-        display: block; /* Menü simgesi mobilde gösterilecek */
-    }
-   
+    }   
 }
 
 /* Tabletler (min-width: 768px ve max-width: 1024px) */
@@ -211,4 +206,40 @@ section{
         font-size: 1.7rem;
     }
    
+}
+
+/* Hamburger ikonu başlangıçta gizli */
+#menu-icon {
+    display: none;    
+    font-size: 3.6rem;
+    cursor: pointer;
+}
+
+/* Ekran genişliği 600px ve altına düştüğünde */
+@media (max-width: 600px) {
+    .navbar {
+        display: none; /* Menü gizlenir */
+        flex-direction: column; /* Açılınca dikey görünsün */
+    }
+    
+    #menu-icon {
+        display: block; /* Hamburger ikonu göster */
+    }
+    
+    .navbar.active {
+        display: flex; /* İkon tıklanınca menü görünür hale gelir */
+        position: absolute;
+        top: 100%; /* Üst menünün hemen altına gelir */
+        left: 0;
+        background-color: white;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .navbar a {
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
+        color: #000;
+    }
 }

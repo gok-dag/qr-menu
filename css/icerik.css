@@ -40,8 +40,16 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    transition: 0.3s;
+    transition: top 0.3s ease;
 }
+/* Header gizlendiğinde */
+.header.hide {
+    top: -100px; /* Yukarı kaydırarak gizler */
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
 
 .header.sticky {
     background: var(--bg-color);
@@ -68,13 +76,6 @@ body {
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
-}
-
-#menu-icon {
-    font-size: 3.6rem;
-    color: var(--text-color);
-    cursor: pointer;
-    display: none;
 }
 
 section {
@@ -179,6 +180,9 @@ section {
         justify-content: space-between;
         flex-direction: row; /* Mobilde de içerik yatayda kalacak */
     }
+    .navbar a {
+        font-size: 1.4rem;
+    }   
 }
 @media (max-width: 450px) {    
     .content span{
@@ -194,39 +198,38 @@ section {
     }
 }
 
-@media (max-width:600px){
-    /* Menü ikonunu göster, yazıları gizle */
-    .navbar a {
-        display: none;
-    }
 
-    /* Menü ikonu görünür hale gelsin */
-    #menu-icon {
-        display: block;
-    }
-
-    /* Menü açıkken görünür olmasını sağla */
-    .navbar.active {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-color);
-    }
-
-    .navbar.active a {
-        display: block;
-        padding: 1rem;
-        text-align: center;
-        border-bottom: 1px solid var(--main-color);
-    }
-
-    /* Menü ikonu varsayılan olarak gizlenir */
-    #menu-icon {
-        display: block;
-        font-size: 3rem;
-        cursor: pointer;
-    }
+#menu-icon {
+    display: none;    
+    font-size: 3.6rem;
+    cursor: pointer;
 }
 
+/* Ekran genişliği 600px ve altına düştüğünde */
+@media (max-width: 600px) {
+    .navbar {
+        display: none; /* Menü gizlenir */
+        flex-direction: column; /* Açılınca dikey görünsün */
+    }
+    
+    #menu-icon {
+        display: block; /* Hamburger ikonu göster */
+    }
+    
+    .navbar.active {
+        display: flex; /* İkon tıklanınca menü görünür hale gelir */
+        position: absolute;
+        top: 100%; /* Üst menünün hemen altına gelir */
+        left: 0;
+        background-color: white;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .navbar a {
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
+        color: #000;
+    }
+}

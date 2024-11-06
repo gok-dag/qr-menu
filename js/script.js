@@ -1,6 +1,24 @@
-const menuIcon = document.querySelector('#menu-icon');
-const navbar = document.querySelector('.navbar');
+let lastScrollY = window.scrollY;
 
-menuIcon.addEventListener('click', () => {
-    navbar.classList.toggle('active');
+window.addEventListener("scroll", () => {
+    const header = document.querySelector(".header");
+
+    if (window.scrollY > lastScrollY) {
+        // Sayfa aşağı kaydırılıyor
+        header.classList.add("hide");
+    } else {
+        // Sayfa yukarı kaydırılıyor
+        header.classList.remove("hide");
+    }
+
+    lastScrollY = window.scrollY;
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.querySelector(".navbar");
+
+    menuIcon.onclick = function() {
+        navbar.classList.toggle("active"); // Menü aç/kapa
+    };
 });
