@@ -193,3 +193,40 @@ section {
         
     }
 }
+
+@media (max-width:600px){
+    /* Menü ikonunu göster, yazıları gizle */
+    .navbar a {
+        display: none;
+    }
+
+    /* Menü ikonu görünür hale gelsin */
+    #menu-icon {
+        display: block;
+    }
+
+    /* Menü açıkken görünür olmasını sağla */
+    .navbar.active {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+    }
+
+    .navbar.active a {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--main-color);
+    }
+
+    /* Menü ikonu varsayılan olarak gizlenir */
+    #menu-icon {
+        display: block;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+}
+
